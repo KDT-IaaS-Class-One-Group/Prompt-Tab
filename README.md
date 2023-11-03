@@ -14,7 +14,6 @@
   - Vanilla JavaScript, CSS, HTML
 - **데이터 저장**
   - JSON 파일
-  - 
 ## **코어 파일 구성**
 - **서버**
     - **app.js**: Express.js 애플리케이션의 시작점
