@@ -7,7 +7,7 @@ const routes = require('./routes/routes');
 const port = 8080;
 
 app.use('/', routes);
-
+app.post('/submit', routes);
 
 server.listen(port, () => {
   console.log(`http://localhost:8080`);
