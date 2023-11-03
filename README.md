@@ -6,7 +6,6 @@
 
 ## 임시 설계
 <img src="https://github.com/KDT-IaaS-Class-One-Group/Prompt-Tab/blob/PinguLee/issue1/public/images/diagram.png">
-<img src="https://github.com/KDT-IaaS-Class-One-Group/Prompt-Tab/blob/PinguLee/issue1/public/images/directory.png">
 
 ## **사용 기술**
 - **서버**
