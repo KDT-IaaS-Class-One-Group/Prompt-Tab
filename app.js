@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes');
+const http = require('http');
+const server = http.createServer(app);
+const routes = require('./routes/routes');
 
 const port = 8080;
 
 app.use('/', routes);
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`http://localhost:8080`);
 }); 
