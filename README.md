@@ -1,5 +1,5 @@
 # Prompt-Tab
-## **기술 스택**
+## **사용 기술**
 
 - **서버**
   - Node.js, Express.js
