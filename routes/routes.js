@@ -14,8 +14,8 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 router.post('/submit', (req, res) => {
   const message = req.body.message;
-  console.log('받은 메시지:', message);
-  res.send('메시지를 성공적으로 받았습니다.');
+  console.log("전송 받은 메시지 : ", message);
+  res.send("오냐 잘 받았다");
 });
 
 module.exports = router;
