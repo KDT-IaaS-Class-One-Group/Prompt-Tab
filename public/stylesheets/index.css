@@ -15,32 +15,3 @@ textarea {
   display: flex;
   flex-direction: row;
 }
-
-.box-Menu {
-  display: flex;
-  flex-direction: column;
-}
-
-.box-Prompt {
-  display: flex;
-  flex-direction: column;
-
-}
-
-.box-Output {
-  height: 95vh;
-}
-
-.box-Input {
-  height: 5vh;
-}
-
-.txt-Input {
-  width: 90%;
-}
-
-@media (min-width: 1281px) {
-  
-  
-  
-}
