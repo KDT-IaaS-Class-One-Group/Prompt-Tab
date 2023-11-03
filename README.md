@@ -1,5 +1,6 @@
 # Prompt-Tab
 ## **필수 설치**
+- npm install
 - npm install express
 ## **사용 기술**
 - **서버**
