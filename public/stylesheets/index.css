@@ -8,19 +8,24 @@ textarea {
   resize: none;
 }
 
-#root {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0; /* body의 기본 마진을 제거합니다. */
 }
 
 .box-Prompt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0; /* 모든 라운드된 모서리를 제거합니다. */
   padding: 20px;
-  width: 300px;
 }
 
 .box-Input {
@@ -57,8 +62,6 @@ ul#box-Output {
 }
 
 li {
-  border: 1px solid #ccc;
-  border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
