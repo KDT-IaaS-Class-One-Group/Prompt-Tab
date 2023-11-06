@@ -17,9 +17,9 @@ function sendMessage() {
       messageElement.innerHTML = response.data;
       boxOutput.appendChild(messageElement);
   
-      const menuMessageElement = document.createElement("li");
-      menuMessageElement.innerHTML = response.data;
-      boxMenu.appendChild(menuMessageElement);
+      // const menuMessageElement = document.createElement("li");
+      // menuMessageElement.innerHTML = response.data;
+      // boxMenu.appendChild(menuMessageElement);
   
       scrollBottom(boxOutput);
       scrollBottom(boxMenu);
@@ -31,8 +31,6 @@ function sendMessage() {
   txtInput.value = "";
   }
 }
-
-
 
 btnSubmit.addEventListener("click", sendMessage);
 txtInput.addEventListener("keypress", (e) => {

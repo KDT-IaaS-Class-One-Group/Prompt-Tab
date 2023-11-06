@@ -2,6 +2,7 @@
   "header": {
     "hamburgerMenu": ["Home", "Profile", "Settings", "Logout"],
     "logo": "🌐",
+    "siteName" : "Pingu",
     "promptInputPlaceholder": "Enter your message here..."
   },
   "mainContent": {

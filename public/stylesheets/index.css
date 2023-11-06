@@ -35,6 +35,7 @@ li {
   flex-direction: column;
   width: 240px;
   height: 100vh;
+  transition: height 0.5s ease;
 }
 
 .box-Header {

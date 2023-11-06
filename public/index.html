@@ -7,6 +7,9 @@
   <link rel="stylesheet" type="text/css" href="./stylesheets/index.css">
   <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
   <script src="./javascripts/index.js" defer></script>
+  <script src="./javascripts/data.js" defer></script>
+  <script src="./javascripts/style.js" defer></script>
+  <script src="./javascripts/toggleButton.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
   <title>Prompt Tab</title>
 </head>
@@ -15,12 +18,16 @@
   <div id="root">
     <div class="box-Big">
       <div class="box-Header">
-        asdasdasdasdasdda
+        <span id="logo"></span>
+        <span id="siteName"></span>
       </div>
+      <button id="toggleButton">펼치기/접기</button>
       <ul id="box-Menu">
       </ul>
       <div class="box-UserInfo">
-        asdasdasdasdasdda
+        <span id="name"></span>
+        <span id="status"></span>
+        <span id="avatar"></span>
       </div>
     </div>
     <div class="box-Prompt">
