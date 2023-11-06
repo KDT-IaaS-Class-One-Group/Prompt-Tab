@@ -3,6 +3,10 @@ const btnSubmit = document.getElementById("btn-Submit");
 const boxOutput = document.getElementById("box-Output");
 const boxMenu = document.getElementById("box-Menu");
 
+function scrollBottom(element) {
+  element.scrollTop = element.scrollHeight;
+}
+
 function sendMessage() {
   if (txtInput.value.trim() !== "") {
     // boxOutput.scrollTop = boxOutput.scrollHeight; // CSS는 나중에 적용
@@ -16,14 +20,15 @@ function sendMessage() {
         const menuMessageElement = document.createElement("li");
         boxMenu.appendChild(menuMessageElement);
         menuMessageElement.textContent = response.data;
+
+        scrollBottom(boxOutput);
+        scrollBottom(boxMenu);
       })
       .catch(error => {
         console.error("에러 발생:", error);
       });
 
     txtInput.value = "";
-    boxOutput.scrollTop = boxOutput.scrollHeight;
-    boxMenu.scrollTop = boxMenu.scrollHeight;
   }
 }
 
