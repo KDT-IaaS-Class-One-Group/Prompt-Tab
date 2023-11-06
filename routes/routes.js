@@ -3,7 +3,6 @@ const router = express.Router();
 const path = require('path');
 const styles = require('../data/style.json');
 
-
 router.get('/styles', (req, res) => {
   res.json(styles);
 });
