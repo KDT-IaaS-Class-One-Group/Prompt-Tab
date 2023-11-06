@@ -1,17 +1,7 @@
 import express from 'express';
 import path from 'path';
-import styles from '../data/style.json';
-import datas from '../data/data.json';
 
 const router = express.Router();
-
-router.get('/styles', (req, res) => {
-  res.json(styles);
-});
-
-router.get('/datas', (req, res) => {
-  res.json(datas);
-});
 
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));
