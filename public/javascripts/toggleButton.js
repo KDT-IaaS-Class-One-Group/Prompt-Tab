@@ -1,12 +1,12 @@
 const boxBig = document.getElementById('boxBig');
-const toggleButton = document.getElementById('toggleButton');
-let isBoxBigExpanded = true; // 초기 확장 여부
+const toggleMenuButton = document.getElementById('toggleMenuButton');
+let isMenuOpen = false; // 초기 메뉴 상태는 닫힌 상태
 
-toggleButton.addEventListener('click', function() {
-  if (isBoxBigExpanded) {
-    boxBig.style.height = '60px'; // 축소 크기 (조절 가능)
+toggleMenuButton.addEventListener('click', function() {
+  if (!isMenuOpen) {
+    boxBig.style.width = '240px'; // 메뉴 열기 (조절 가능)
   } else {
-    boxBig.style.height = '300px'; // 확장 크기 (조절 가능)
+    boxBig.style.width = '0'; // 메뉴 닫기
   }
-  isBoxBigExpanded = !isBoxBigExpanded; // 확장 여부 토글
+  isMenuOpen = !isMenuOpen; // 메뉴 상태를 열린 또는 닫힌 상태로 토글
 });

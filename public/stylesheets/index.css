@@ -30,12 +30,17 @@ li {
   overflow: hidden;
 }
 
-.box-Big {
+/* .box-Big {
   display: flex;
   flex-direction: column;
   width: 240px;
   height: 100vh;
-  transition: height 0.5s ease;
+} */
+.box-Big {
+  /* 다른 스타일 */
+  width: 0; /* 초기에는 메뉴가 닫혀있음 */
+  overflow: hidden; /* 너비를 조정하여 메뉴를 숨기거나 보이도록 함 */
+  transition: width 0.5s ease; /* 너비를 변경할 때 애니메이션 효과 */
 }
 
 .box-Header {
@@ -55,9 +60,6 @@ li {
   height: calc(100vh - 160px);
   padding: 20px;
   flex-direction: column;
-}
-
-#box-Menu > li {
 }
 
 .box-UserInfo {
@@ -82,7 +84,6 @@ li {
   background-color: #fff;
   padding: 20px;
   margin-top: auto;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
 
 #box-Output {
