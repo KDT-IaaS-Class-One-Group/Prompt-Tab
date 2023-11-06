@@ -36,7 +36,7 @@ li {
   width: 240px;
   height: 100vh;
 } */
-.box-Big {
+#box-sideMenu {
   /* 다른 스타일 */
   width: 0; /* 초기에는 메뉴가 닫혀있음 */
   overflow: hidden; /* 너비를 조정하여 메뉴를 숨기거나 보이도록 함 */
