@@ -3,6 +3,8 @@
 ## **필수 설치**
 - npm install
 - npm install express
+- npm install esm
+- npm install bodyparser
 
 ## 임시 설계
 <img src="https://github.com/KDT-IaaS-Class-One-Group/Prompt-Tab/blob/PinguLee/issue1/public/images/diagram.png">
