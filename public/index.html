@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +11,19 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
   <title>Prompt Tab</title>
 </head>
-
 <body>
   <div id="root">
-    <div id="box-sideMenu">
+    <div id="box-SideMenu">
       <div class="box-Header">
         <span id="logo">ㅁ</span>
         <span id="siteName">ㄴ</span>
-        <div id="toggleButton" class="toggle-button">
+        <div id="btn-Toggle" class="btn-Toggle">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
       </div>
-
-      <ul id="box-Menu">
-      </ul>
+      <ul id="box-Menu"></ul>
       <div class="box-UserInfo">
         <span id="name"></span>
         <span id="status"></span>
@@ -35,15 +31,12 @@
       </div>
     </div>
     <div class="box-Prompt">
-      <ul id="box-Output">
-      </ul>
+      <ul id="box-Output"></ul>
       <div class="box-Input">
         <textarea id="txt-Input" name="txt-Input" placeholder="입력"></textarea>
         <input id="btn-Submit" type="submit" value="전송">
       </div>
     </div>
   </div>
-
 </body>
-
 </html>

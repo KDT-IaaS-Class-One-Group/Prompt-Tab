@@ -31,10 +31,14 @@ li {
 }
 
 
-#box-sideMenu {
+#box-SideMenu {
   width: 0px; /* 초기에는 메뉴가 닫혀있음 */
   overflow: hidden; /* 너비를 조정하여 메뉴를 숨기거나 보이도록 함 */
   transition: width 0.5s ease; /* 너비를 변경할 때 애니메이션 효과 */
+}
+
+#box-SideMenu.open {
+  width: 250px;
 }
 
 .box-Header {
@@ -64,7 +68,6 @@ li {
   bottom: 0;
   left: 0;
   height: 100px;
-  width: 240px;
   background-color: #f9f9f9;
   padding: 20px;
 }
@@ -134,12 +137,16 @@ li {
   background-color: #0056b3;
 }
 
-.toggle-button {
+.btn-Toggle {
   position: fixed;
   top: 10px;
   left: 10px;
   cursor: pointer;
   z-index: 1; /* 메뉴 위에 표시 */
+}
+
+.btn-Toggle.animated {
+  transition: left 0.5s ease;
 }
 
 .bar {
