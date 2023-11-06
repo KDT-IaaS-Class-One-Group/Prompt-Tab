@@ -1,8 +1,9 @@
 const root = document.getElementById("root");
+const sideMenu = document.getElementById("box-sideMenu");
+const toggleButton = document.getElementById("toggleMenu");
+const boxOutput = document.getElementById("box-Output");
 const txtInput = document.getElementById("txt-Input");
 const btnSubmit = document.getElementById("btn-Submit");
-const boxOutput = document.getElementById("box-Output");
-const boxMenu = document.getElementById("box-Menu");
 
 function scrollBottom(element) {
   element.scrollTop = element.scrollHeight;
@@ -37,5 +38,14 @@ txtInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter" && !e.shiftKey) {
     e.preventDefault(); // 기본 Enter 키 동작 방지
     sendMessage();
+  }
+});
+
+toggleButton.addEventListener("click", () => {
+  const currentWidth = parseInt(getComputedStyle(sideMenu).width);
+  if (currentWidth === 0) {
+    sideMenu.style.width = "250px";
+  } else {
+    sideMenu.style.width = "0";
   }
 });
