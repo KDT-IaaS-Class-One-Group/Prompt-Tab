@@ -137,7 +137,7 @@ li {
 .toggle-button {
   position: fixed;
   top: 10px;
-  right: 10px;
+  left: 10px;
   cursor: pointer;
   z-index: 1; /* 메뉴 위에 표시 */
 }

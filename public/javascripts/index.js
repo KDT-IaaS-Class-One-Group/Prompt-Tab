@@ -1,6 +1,6 @@
 const root = document.getElementById("root");
 const sideMenu = document.getElementById("box-sideMenu");
-const toggleButton = document.getElementById("toggleMenu");
+const toggleButton = document.getElementById("toggleButton"); // "toggleMenu"를 "toggleButton"으로 변경
 const boxOutput = document.getElementById("box-Output");
 const txtInput = document.getElementById("txt-Input");
 const btnSubmit = document.getElementById("btn-Submit");
