@@ -1,13 +1,12 @@
 {
   "header": {
-    "hamburgerMenu": ["Home", "Profile", "Settings", "Logout"],
     "logo": "🌐",
     "siteName" : "Pingu",
     "promptInputPlaceholder": "Enter your message here..."
   },
   "mainContent": {
     "userInfo": {
-      "name": "Pingu ELee",
+      "name": "Pingu Lee",
       "status": "Online",
       "avatar": "👤"
     }
