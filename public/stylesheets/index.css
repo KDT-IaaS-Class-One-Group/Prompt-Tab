@@ -31,22 +31,50 @@ li {
   overflow: hidden;
 }
 
-#box-Menu {
+.box-Big {
+  display: flex;
+  flex-direction: column;
   width: 240px;
   height: 100vh;
-  background-color: #eee;
-  padding: 20px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 100%;
 }
+
+.box-Logo {
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 60px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+#box-Menu {
+  display: flex;
+  position: relative;
+  background-color: #eee;
+  overflow: auto;
+  height: calc(100vh - 160px);
+  padding: 20px;
+  flex-direction: column;
+}
+
 #box-Menu > li {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+
+.box-Profile {
+  display: flex;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 240px;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
 .box-Prompt {
+  position: relative;
   flex: 1;
   height: 100vh;
   display: flex;
@@ -59,25 +87,22 @@ li {
 
 #box-Output {
   display: flex;
+  position: relative;
   flex-direction: column;
-  height: calc(100vh - 100px); /* 전체 높이에서 .box-Input 높이(40px)와 여유 높이(100px)를 뺍니다. */
+  height: calc(100vh - 100px);
   overflow-y: auto;
-  padding-bottom: 20px; /* 아래 여백 추가 */
 }
-
 
 .box-Input {
   display: flex;
-  position: absolute;
-  bottom: 20px;
-  width: calc(100% - 280px);
+  position: relative;
+  width: calc(100%);
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   resize: none;
   overflow-y: hidden;
-
 }
 
 #txt-Input {
@@ -107,17 +132,4 @@ li {
 
 #btn-Submit:hover {
   background-color: #0056b3;
-}
-
-
-.box-Profile {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100px;
-  width: 240px;
-  background-color: #f9f9f9;
-  padding: 20px;
 }
