@@ -10,7 +10,6 @@ textarea {
 
 ul {
   list-style: none;
-  list-style-type: none;
 }
 
 li {
@@ -24,15 +23,14 @@ li {
   display: flex;
   flex-direction: row;
   height: 100vh;
-  justify-content: center;
   justify-content: flex-end;
   overflow: hidden;
 }
 
 #box-SideMenu {
-  width: 0px; /* 초기에는 메뉴가 닫혀있음 */
-  overflow: hidden; /* 너비를 조정하여 메뉴를 숨기거나 보이도록 함 */
-  transition: width 0.5s ease; /* 너비를 변경할 때 애니메이션 효과 */
+  width: 0;
+  overflow: hidden;
+  transition: width 0.5s ease;
 }
 
 #box-SideMenu.open {
@@ -41,7 +39,6 @@ li {
 
 .box-Header {
   display: flex;
-  position: relative;
   align-items: center;
   height: 60px;
   background-color: #f9f9f9;
@@ -50,7 +47,6 @@ li {
 
 #box-Menu {
   display: flex;
-  position: relative;
   background-color: #eee;
   overflow: auto;
   height: calc(100vh - 160px);
@@ -58,22 +54,8 @@ li {
   flex-direction: column;
 }
 
-.box-UserInfo {
-  display: flex;
-  display: flex;
-  align-items: center;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  height: 100px;
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-
 .box-Prompt {
-  position: relative;
   flex: 1;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -83,20 +65,15 @@ li {
 
 #box-Output {
   display: flex;
-  position: relative;
   flex-direction: column;
   height: calc(100vh - 100px);
   overflow-y: auto;
   white-space: pre-line;
-}
-
-#box-Output {
-  white-space: pre-line;
+  padding: 0 50px 0 50px;
 }
 
 .box-Input {
   display: flex;
-  position: relative;
   width: calc(100%);
   padding: 10px;
   border: 1px solid #ccc;
@@ -107,9 +84,9 @@ li {
 }
 
 #txt-Input {
-  width: calc(100% - 80px); /* 우측 패딩을 제외한 너비 설정 */
+  width: calc(100% - 80px);
   height: 40px;
-  min-height: 40px; /* 최소 높이 유지 */
+  min-height: 40px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -140,7 +117,7 @@ li {
   top: 10px;
   left: 10px;
   cursor: pointer;
-  z-index: 1; /* 메뉴 위에 표시 */
+  z-index: 1;
 }
 
 .btn-Toggle.animated {
