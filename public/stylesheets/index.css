@@ -37,7 +37,7 @@ li {
   height: 100vh;
 }
 
-.box-Logo {
+.box-Header {
   display: flex;
   position: relative;
   align-items: center;
@@ -59,7 +59,7 @@ li {
 #box-Menu > li {
 }
 
-.box-Profile {
+.box-UserInfo {
   display: flex;
   display: flex;
   align-items: center;
@@ -90,6 +90,11 @@ li {
   flex-direction: column;
   height: calc(100vh - 100px);
   overflow-y: auto;
+  white-space: pre-line;
+}
+
+#box-Output {
+  white-space: pre-line;
 }
 
 .box-Input {
