@@ -14,7 +14,6 @@ ul {
 }
 
 li {
-
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -29,7 +28,6 @@ li {
   justify-content: flex-end;
   overflow: hidden;
 }
-
 
 #box-SideMenu {
   width: 0px; /* 초기에는 메뉴가 닫혀있음 */
