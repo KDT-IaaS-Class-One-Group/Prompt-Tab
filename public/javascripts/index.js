@@ -20,7 +20,7 @@ function sendMessage() {
       .catch(error => {
         console.error("에러 발생:", error);
       });
-      
+
     txtInput.value = "";
     boxOutput.scrollTop = boxOutput.scrollHeight;
     boxMenu.scrollTop = boxMenu.scrollHeight;
@@ -29,8 +29,8 @@ function sendMessage() {
 
 btnSubmit.addEventListener("click", sendMessage);
 txtInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
+  if (e.key === "Enter" && !e.shiftKey) {
+    e.preventDefault(); // 기본 Enter 키 동작 방지
     sendMessage();
   }
 });
