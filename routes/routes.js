@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import styles from '../data/style.json';
+import datas from '../data/data.json';
+
 const router = express.Router();
-const path = require('path');
-const styles = require('../data/style.json');
-const datas = require('../data/data.json');
 
 router.get('/styles', (req, res) => {
   res.json(styles);
@@ -19,14 +20,14 @@ router.get('/', (req, res) => {
 router.post('/submit', (req, res) => {
   try {
     const receivedMessage = req.body.message;
-    console.log("전송 받은 메시지:", receivedMessage);
+    console.log("Received message:", receivedMessage);
 
     const messageWithBreaks = receivedMessage.replace(/\n/g, '<br>');
     res.send(`<p>${messageWithBreaks}</p>`);
   } catch (error) {
-    console.error("오류 발생:", error);
-    res.status(500).send("요청 처리 중 오류 발생");
+    console.error("Error occurred:", error);
+    res.status(500).send("Error occurred while processing the request");
   }
 });
 
-module.exports = router;
+export default router;

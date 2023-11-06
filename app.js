@@ -1,19 +1,18 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const http = require('http');
-const bodyParser = require('body-parser');
-const server = http.createServer(app);
-const routes = require('./routes/routes');
+import express from 'express';
+import path from 'path';
+import http from 'http';
+import bodyParser from 'body-parser';
 
+const app = express();
 const port = 8080;
 
 app.use(bodyParser.json());
-
 app.use(express.static(path.join(__dirname, 'public')));
 
+const routes = require('./routes/routes');
 app.use('/', routes);
 
+const server = http.createServer(app);
 server.listen(port, () => {
-  console.log(`http://localhost:8080`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
