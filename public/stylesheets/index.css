@@ -55,8 +55,16 @@ li {
   padding: 20px;
   margin-top: auto;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
 }
+
+#box-Output {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* 전체 높이에서 .box-Input 높이(40px)와 여유 높이(100px)를 뺍니다. */
+  overflow-y: auto;
+  padding-bottom: 20px; /* 아래 여백 추가 */
+}
+
 
 .box-Input {
   display: flex;
@@ -99,4 +107,17 @@ li {
 
 #btn-Submit:hover {
   background-color: #0056b3;
+}
+
+
+.box-Profile {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 240px;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
