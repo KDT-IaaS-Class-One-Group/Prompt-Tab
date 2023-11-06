@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const root = document.getElementById("root");
 const boxSideMenu = document.getElementById("box-SideMenu");
 const btnToggle = document.getElementById("btn-Toggle");
