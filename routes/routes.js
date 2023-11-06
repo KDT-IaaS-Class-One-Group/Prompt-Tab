@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const styles = require('../data/style.json');
 
+
 router.get('/styles', (req, res) => {
   res.json(styles);
 });
@@ -12,9 +13,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/submit', (req, res) => {
-  const message = req.body.message;
-  console.log("전송 받은 메시지: ", message);
-  res.send("메시지를 성공적으로 받았습니다.");
+  try {
+    const receivedMessage = req.body.message;
+    console.log("전송 받은 메시지:",receivedMessage);
+    res.send(receivedMessage);
+  } catch (error) {
+    console.error("오류 발생:", error);
+    res.status(500).send("요청 처리 중 오류 발생");
+  }
 });
 
 module.exports = router;

@@ -9,8 +9,6 @@ function scrollBottom(element) {
 
 function sendMessage() {
   if (txtInput.value.trim() !== "") {
-    // boxOutput.scrollTop = boxOutput.scrollHeight; // CSS는 나중에 적용
-
     axios.post("/submit", { message: txtInput.value })
       .then(response => {
         const messageElement = document.createElement("li");
