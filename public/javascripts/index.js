@@ -39,12 +39,12 @@ let isToggled = false;
 btnToggle.addEventListener('click', () => {
   boxSideMenu.classList.toggle('open');
   const currentLeft = parseFloat(window.getComputedStyle(btnToggle).left);
-
+console.log(boxSideMenu.offsetWidth)
   if (!isToggled) {
-    const newLeft = currentLeft + 250;
+    const newLeft = currentLeft + 300;
     btnToggle.style.left = `${newLeft}px`;
   } else {
-    const newLeft = currentLeft - 250;
+    const newLeft = currentLeft - 300;
     btnToggle.style.left = `${newLeft}px`;
   }
 
