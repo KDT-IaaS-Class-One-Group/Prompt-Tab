@@ -105,6 +105,9 @@ ul {
   padding: 10px;
   margin-bottom: 10px;
 }
+#box-Output > li > :first-child {
+  margin-right: 10px;
+}
 
 .box-Input {
   display: flex;

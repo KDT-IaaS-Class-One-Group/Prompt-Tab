@@ -5,14 +5,44 @@ const boxMenu = document.getElementById("box-Menu");
 const boxOutput = document.getElementById("box-Output");
 const txtInput = document.getElementById("txt-Input");
 const btnSubmit = document.getElementById("btn-Submit");
+let ai, user;
 
 const scrollBottom = (element) => {
   element.scrollTop = element.scrollHeight;
 };
 
-const addMessageToOutput = (message) => {
+axios.get('/style.json')
+  .then(response => {
+    const data = response.data
+
+    
+    ai = data.icons.ai;
+    user = data.icons.user;
+    
+  })
+  .catch(error => {
+    console.error("Error fetching data:", error);
+  }); 
+
+const addMessageToOutput = (message, test) => {
   const messageElement = document.createElement("li");
-  messageElement.textContent = message;
+  const fSpan = document.createElement("span");
+  const rSpan = document.createElement("span");
+
+  const textNode = document.createTextNode(message);
+
+  if (test == "client") {
+    fSpan.textContent = ai;
+    messageElement.appendChild(fSpan);
+    rSpan.appendChild(textNode);
+  } else if (test == "server") {
+    fSpan.textContent = user;
+    messageElement.appendChild(fSpan);
+    rSpan.appendChild(textNode);
+  }
+
+  messageElement.appendChild(rSpan);
+
   boxOutput.appendChild(messageElement);
   scrollBottom(boxOutput);
 };
@@ -21,12 +51,12 @@ const sendMessage = () => {
   if (txtInput.value.trim() !== "") {
     const userMessage = txtInput.value; // 사용자 입력 메시지
 
-    addMessageToOutput(`User: ${userMessage}`); // 사용자 요청 메시지를 box-Output에 추가
+    addMessageToOutput(userMessage, "client"); // 사용자 요청 메시지를 box-Output에 추가
 
     axios.post("/submit", { message: userMessage })
       .then(response => {
         const serverResponse = response.data; // 서버 응답 메시지
-        addMessageToOutput(`Server: ${serverResponse}`); // 서버 응답을 box-Output에 추가
+        addMessageToOutput(serverResponse, "server"); // 서버 응답을 box-Output에 추가
       })
       .catch(error => {
         addMessageToOutput("Error occurred while processing the request"); // 에러 메시지를 추가
