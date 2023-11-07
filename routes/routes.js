@@ -27,7 +27,7 @@ router.post('/submit', (req, res) => {
     console.log("Received message:", receivedMessage);
 
     const messageWithBreaks = receivedMessage.replace(/\n/g, '<br>');
-    res.send(`<p>${messageWithBreaks}</p>`);
+    res.send(`${messageWithBreaks}가 대체 뭔데`);
   } catch (error) {
     console.error("Error occurred:", error);
     res.status(500).send("Error occurred while processing the request");
