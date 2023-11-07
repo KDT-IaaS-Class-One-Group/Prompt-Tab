@@ -24,12 +24,15 @@ const sendMessage = () => {
     userListItem.textContent = userMessage;
     boxMenu.appendChild(userListItem);
 
+    addMessageToOutput(`User: ${userMessage}`); // 사용자 요청 메시지를 box-Output에 추가
+
     axios.post("/submit", { message: userMessage })
       .then(response => {
         const serverResponse = response.data; // 서버 응답 메시지
-        addMessageToOutput(serverResponse); // 서버 응답을 box-Output에 추가
+        addMessageToOutput(`Server: ${serverResponse}`); // 서버 응답을 box-Output에 추가
       })
       .catch(error => {
+        addMessageToOutput("Error occurred while processing the request"); // 에러 메시지를 추가
         console.error("에러 발생:", error);
       });
 
