@@ -10,15 +10,4 @@ axios.get('/data.json')
   })
   .catch(error => {
     console.error("Error fetching data:", error);
-  });
-
-  axios.get('/style.json')
-  .then(response => {
-    const data = response.data;
-
-  })
-  .catch(error => {
-    console.error("Error fetching data:", error);
-  });
-
-  
+  }); 
