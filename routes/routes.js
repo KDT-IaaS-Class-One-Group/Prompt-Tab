@@ -24,7 +24,6 @@ router.get('/style.json', (req, res) => {
 router.post('/submit', (req, res) => {
   try {
     const receivedMessage = req.body.message;
-    console.log("Received message:", receivedMessage);
 
     const messageWithBreaks = receivedMessage.replace(/\n/g, '<br>');
     res.send(`${messageWithBreaks}가 대체 뭔데`);
