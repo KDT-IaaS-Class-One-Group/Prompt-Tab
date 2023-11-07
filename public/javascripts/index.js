@@ -1,6 +1,7 @@
 const root = document.getElementById("root");
 const boxSideMenu = document.getElementById("box-SideMenu");
 const btnToggle = document.getElementById("btn-Toggle");
+const boxMenu = document.getElementById("box-Menu");
 const boxOutput = document.getElementById("box-Output");
 const txtInput = document.getElementById("txt-Input");
 const btnSubmit = document.getElementById("btn-Submit");
@@ -11,6 +12,10 @@ const scrollBottom = (element) => {
 
 const sendMessage = () => {
   if (txtInput.value.trim() !== "") {
+    const listItem = document.createElement("li");
+    listItem.textContent = txtInput.value;
+    boxMenu.appendChild(listItem);
+
     axios.post("/submit", { message: txtInput.value })
       .then(response => {
         const messageElement = document.createElement("li");
@@ -39,7 +44,7 @@ let isToggled = false;
 btnToggle.addEventListener('click', () => {
   boxSideMenu.classList.toggle('open');
   const currentLeft = parseFloat(window.getComputedStyle(btnToggle).left);
-console.log(boxSideMenu.offsetWidth)
+  console.log(boxSideMenu.offsetWidth)
   if (!isToggled) {
     const newLeft = currentLeft + 300;
     btnToggle.style.left = `${newLeft}px`;
