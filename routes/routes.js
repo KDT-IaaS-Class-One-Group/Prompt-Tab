@@ -7,6 +7,16 @@ router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));
 });
 
+router.get('/data.json', (req, res) => {
+  // 이곳에서 JSON 파일의 경로를 설정해야 합니다
+  res.sendFile(path.join(__dirname, 'path_to_data.json'));
+});
+
+router.get('/style.json', (req, res) => {
+  // 이곳에서 style.json 파일의 경로를 설정해야 합니다
+  res.sendFile(path.join(__dirname, 'path_to_style.json'));
+});
+
 router.post('/submit', (req, res) => {
   try {
     const receivedMessage = req.body.message;
