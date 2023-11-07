@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const root = document.getElementById("root");
 const boxSideMenu = document.getElementById("box-SideMenu");
 const btnToggle = document.getElementById("btn-Toggle");
@@ -43,10 +41,10 @@ btnToggle.addEventListener('click', () => {
   const currentLeft = parseFloat(window.getComputedStyle(btnToggle).left);
 
   if (!isToggled) {
-    const newLeft = currentLeft + 200;
+    const newLeft = currentLeft + 250;
     btnToggle.style.left = `${newLeft}px`;
   } else {
-    const newLeft = currentLeft - 200;
+    const newLeft = currentLeft - 250;
     btnToggle.style.left = `${newLeft}px`;
   }
 
