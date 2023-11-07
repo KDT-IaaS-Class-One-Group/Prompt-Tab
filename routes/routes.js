@@ -1,20 +1,24 @@
 import express from 'express';
 import path from 'path';
-import styles from '../data/style.json';
-import datas from '../data/data.json';
+import { fileURLToPath } from 'url';
 
 const router = express.Router();
 
-router.get('/styles', (req, res) => {
-  res.json(styles);
-});
-
-router.get('/datas', (req, res) => {
-  res.json(datas);
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
+
+router.get('/data.json', (req, res) => {
+  // 이곳에서 JSON 파일의 경로를 설정해야 합니다
+  res.sendFile(path.join(__dirname, '../data', 'data.json'));
+});
+
+router.get('/style.json', (req, res) => {
+  // 이곳에서 style.json 파일의 경로를 설정해야 합니다
+  res.sendFile(path.join(__dirname, '../data', 'style.json'));
 });
 
 router.post('/submit', (req, res) => {
@@ -23,7 +27,7 @@ router.post('/submit', (req, res) => {
     console.log("Received message:", receivedMessage);
 
     const messageWithBreaks = receivedMessage.replace(/\n/g, '<br>');
-    res.send(`<p>${messageWithBreaks}</p>`);
+    res.send(`${messageWithBreaks}가 대체 뭔데`);
   } catch (error) {
     console.error("Error occurred:", error);
     res.status(500).send("Error occurred while processing the request");

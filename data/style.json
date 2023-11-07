@@ -8,5 +8,9 @@
   "fonts": {
     "main": "Arial, sans-serif",
     "alternate": "Georgia, serif"
+  },
+  "icons": {
+    "logo": "🤖",
+    "userAvatar": "👤"
   }
 }

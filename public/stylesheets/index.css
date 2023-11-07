@@ -36,7 +36,7 @@ li {
 }
 
 #box-SideMenu.open {
-  width: 250px;
+  width: 300px;
 }
 
 .box-Header {
@@ -46,6 +46,7 @@ li {
   height: 60px;
   background-color: #f9f9f9;
   padding: 20px;
+  gap: 10px;
 }
 
 #box-Menu {
@@ -88,6 +89,7 @@ li {
   height: calc(100vh - 100px);
   overflow-y: auto;
   white-space: pre-line;
+  padding: 0 40px 0 40px
 }
 
 #box-Output {
@@ -154,4 +156,8 @@ li {
   margin: 5px 0;
   background-color: #333;
   transition: 0.4s;
+}
+
+.box-UserInfo {
+  gap: 10px;
 }
