@@ -8,26 +8,32 @@ const btnSubmit = document.getElementById("btn-Submit");
 
 const scrollBottom = (element) => {
   element.scrollTop = element.scrollHeight;
-}
+};
+
+const addMessageToOutput = (message) => {
+  const messageElement = document.createElement("li");
+  messageElement.textContent = message;
+  boxOutput.appendChild(messageElement);
+  scrollBottom(boxOutput);
+};
 
 const sendMessage = () => {
   if (txtInput.value.trim() !== "") {
-    const listItem = document.createElement("li");
-    listItem.textContent = txtInput.value;
-    boxMenu.appendChild(listItem);
+    const userMessage = txtInput.value; // 사용자 입력 메시지
+    const userListItem = document.createElement("li");
+    userListItem.textContent = userMessage;
+    boxMenu.appendChild(userListItem);
 
-    axios.post("/submit", { message: txtInput.value })
+    axios.post("/submit", { message: userMessage })
       .then(response => {
-        const messageElement = document.createElement("li");
-        messageElement.innerHTML = response.data;
-        boxOutput.appendChild(messageElement);
-        scrollBottom(boxOutput);
+        const serverResponse = response.data; // 서버 응답 메시지
+        addMessageToOutput(serverResponse); // 서버 응답을 box-Output에 추가
       })
       .catch(error => {
         console.error("에러 발생:", error);
       });
 
-    txtInput.value = "";
+    txtInput.value = ""; // 입력란 초기화
   }
 };
 
@@ -44,7 +50,7 @@ let isToggled = false;
 btnToggle.addEventListener('click', () => {
   boxSideMenu.classList.toggle('open');
   const currentLeft = parseFloat(window.getComputedStyle(btnToggle).left);
-  console.log(boxSideMenu.offsetWidth)
+  console.log(boxSideMenu.offsetWidth);
   if (!isToggled) {
     const newLeft = currentLeft + 300;
     btnToggle.style.left = `${newLeft}px`;
