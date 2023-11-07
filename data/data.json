@@ -1,5 +1,6 @@
 {
   "header": {
+    "hamburgerMenu": ["Home, Good", "Bad"],
     "logo": "🌐",
     "siteName" : "Pingu",
     "promptInputPlaceholder": "Enter your message here..."

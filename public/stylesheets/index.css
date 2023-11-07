@@ -13,13 +13,6 @@ ul {
   list-style-type: none;
 }
 
-li {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
 #root {
   display: flex;
   flex-direction: row;
@@ -47,6 +40,7 @@ li {
   background-color: #f9f9f9;
   padding: 20px;
   gap: 10px;
+  justify-content: center;
 }
 
 #box-Menu {
@@ -55,12 +49,26 @@ li {
   background-color: #eee;
   overflow: auto;
   height: calc(100vh - 160px);
-  padding: 20px;
   flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+#box-Menu span {
+  display: flex;
+  height: 80px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-Menu span:hover {
+  background-color: #ccc;
 }
 
 .box-UserInfo {
-  display: flex;
   display: flex;
   align-items: center;
   position: relative;
@@ -89,11 +97,13 @@ li {
   height: calc(100vh - 100px);
   overflow-y: auto;
   white-space: pre-line;
-  padding: 0 40px 0 40px
+  padding: 0 40px 0 40px;
 }
-
-#box-Output {
-  white-space: pre-line;
+#box-Output > li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .box-Input {
