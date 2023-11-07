@@ -20,9 +20,6 @@ const addMessageToOutput = (message) => {
 const sendMessage = () => {
   if (txtInput.value.trim() !== "") {
     const userMessage = txtInput.value; // 사용자 입력 메시지
-    const userListItem = document.createElement("li");
-    userListItem.textContent = userMessage;
-    boxMenu.appendChild(userListItem);
 
     addMessageToOutput(`User: ${userMessage}`); // 사용자 요청 메시지를 box-Output에 추가
 
@@ -53,7 +50,6 @@ let isToggled = false;
 btnToggle.addEventListener('click', () => {
   boxSideMenu.classList.toggle('open');
   const currentLeft = parseFloat(window.getComputedStyle(btnToggle).left);
-  console.log(boxSideMenu.offsetWidth);
   if (!isToggled) {
     const newLeft = currentLeft + 300;
     btnToggle.style.left = `${newLeft}px`;

@@ -31,8 +31,8 @@ router.post('/submit', (req, res) => {
 
     // 기존 데이터베이스 파일 읽기
     let existingData = [];
-    if (fs.existsSync(path.join(__dirname, '../data/database.json'))) {
-      const data = fs.readFileSync(path.join(__dirname, '../data/database.json'), 'utf8');
+    if (fs.existsSync(path.join(__dirname, '../db/database.json'))) {
+      const data = fs.readFileSync(path.join(__dirname, '../db/database.json'), 'utf8');
       existingData = JSON.parse(data);
     }
 
@@ -40,7 +40,7 @@ router.post('/submit', (req, res) => {
     existingData.push(newData);
 
     // 데이터베이스 파일에 쓰기
-    fs.writeFileSync(path.join(__dirname, '../data/database.json'), JSON.stringify(existingData, null, 2));
+    fs.writeFileSync(path.join(__dirname, '../db/database.json'), JSON.stringify(existingData, null, 2));
 
     const messageWithBreaks = receivedMessage.replace(/\n/g, '<br>');
     res.send(`${messageWithBreaks}가 대체 뭔데`);
